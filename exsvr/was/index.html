@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+	<title>Local HTTPS</title>
+</head>
+<body>
+<h2>Local HTTPS<b2>
+<hr>
+<img src="/img/foo_kr.png" alt="foo_kr.png" width="30%">
+<hr>
+<script src="/js/foo.js"></script>
+<script>
+
+  
+	function onLoadWithErrorHandling() {
+		try {
+
+			foo_js_insertSpan();
+
+		} catch (error) {
+			// 에러 발생 시 span에 에러 메시지 표시
+			displayErrorMessage(error.message);
+		}
+	}
+
+	function displayErrorMessage(errorMessage) {
+		// 새로운 span 요소 생성
+		const errorSpan = document.createElement("span");
+
+		// 에러 메시지 설정
+		errorSpan.textContent = "An error occurred: " + errorMessage;
+
+		// 스타일 추가 (선택 사항)
+		errorSpan.style.color = "red";
+		errorSpan.style.fontWeight = "bold";
+
+		// body에 span 추가
+		document.body.appendChild(errorSpan);
+	}
+
+	// 페이지가 로드될 때 onLoadWithErrorHandling 함수 호출
+	window.onload = onLoadWithErrorHandling;
+  
+</script>
+</body>
+<html>	
